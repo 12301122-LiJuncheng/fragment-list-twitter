@@ -165,8 +165,7 @@ public class WebsitesFragment extends ListFragment {
     private void shareSearch(String tag)
     {
         // create the URL representing the search
-        String urlString = getString(R.string.searchURL) +
-                Uri.encode(savedSearches.getString(tag, ""), "UTF-8");
+        String urlString = "http://" + Uri.encode(savedSearches.getString(tag, ""), "UTF-8");
 
         // create Intent to share urlString
         Intent shareIntent = new Intent();

@@ -1,6 +1,9 @@
 package com.deitel.twittersearches;
 
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,6 +13,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.deitel.twittersearches.R;
 
@@ -45,7 +49,12 @@ public class WebViewFragment extends Fragment {
                 return true;
             }
         });
-        webview.loadUrl(urlString);
+
+        try {
+            webview.loadUrl(urlString);
+        }catch(ActivityNotFoundException ex){
+            Toast.makeText(getActivity(), "Wrong website link!", Toast.LENGTH_LONG).show();
+        }
 
         return view;
     }

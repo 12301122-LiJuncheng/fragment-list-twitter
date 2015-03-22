@@ -37,7 +37,6 @@ public class MainActivity extends Activity implements WebsitesFragment.OnFragmen
    private EditText queryEditText; // EditText where user enters a query
    private EditText tagEditText; // EditText where user tags a query
    private SharedPreferences savedSearches; // user's favorite searches
-   private LinearLayout fragmentLayout;
    private FragmentManager fm;
    
    // SOME Changes _ called when MainActivity is first created
@@ -50,7 +49,6 @@ public class MainActivity extends Activity implements WebsitesFragment.OnFragmen
       // get references to the EditTexts  
       queryEditText = (EditText) findViewById(R.id.queryEditText);
       tagEditText = (EditText) findViewById(R.id.tagEditText);
-      fragmentLayout = (LinearLayout) findViewById(R.id.fragment);
 
       // get the SharedPreferences containing the user's saved searches
       savedSearches = getSharedPreferences(SEARCHES, MODE_PRIVATE);
